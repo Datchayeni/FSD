@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Rainy Days</title>
+
+        <style>
+
+        /* Remove default spacing */
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+
+        /* Style the whole webpage */
+        body{
+            min-height:100vh; /* Full screen height */
+            display:flex; /* Flexbox layout */
+            justify-content:center; /* Center horizontally */
+            align-items:center; /* Center vertically */
+
+            /* Rainy dark gradient background */
+            background: linear-gradient(
+                180deg,
+                #0a0f1c 0%,
+                #131c2f 35%,
+                #1f2a40 70%,
+                #2c3e50 100%
+            );
+
+            color:white; /* Text color */
+        }
+
+        /* Main content box */
+        .container{
+            width:65%;
+            max-width:700px;
+            text-align:center;
+            padding:20px;
+
+            /* Glassmorphism effect */
+            background:rgba(255,255,255,0.08);
+            backdrop-filter:blur(5px);
+
+            border-radius:15px;
+
+            box-shadow:0 8px 30px rgba(0,0,0,0.4);
+        }
+
+        /* Main heading */
+        h1{
+            font-size:42px;
+            margin-bottom:15px;
+            letter-spacing:2px;
+        }
+
+        /* Subtitle text */
+        .subtitle{
+            color:#cbd5e1;
+            margin-bottom:20px;
+            font-style:italic;
+        }
+
+        /* Image styling */
+        img{
+            width:100%;
+            max-width:500px;
+            height:400px;
+            border-radius:12px;
+            margin:10px 0;
+        }
+
+        /* Paragraph styling */
+        p{
+            font-size:17px;
+            line-height:1.5;
+            color:#e2e8f0;
+        }
+
+        /* Button styling */
+        button{
+            margin-top:20px;
+            padding:10px 25px;
+            border:none;
+            border-radius:25px;
+
+            background:#334155;
+            color:white;
+
+            font-size:16px;
+            cursor:pointer;
+
+            transition:0.3s;
+        }
+
+        /* Button hover effect */
+        button:hover{
+            background:#475569;
+            transform:translateY(-2px);
+        }
+
+        </style>
+    </head>
+
+    <body>
+
+        <!-- Main container -->
+        <div class="container">
+
+            <!-- Page heading -->
+            <h1>Rainy Days</h1>
+
+            <!-- Small subtitle -->
+            <p class="subtitle">
+                Inspired by quiet nights and gentle rain
+            </p>
+
+            <!-- Rainy day image -->
+            <img src="https://i.pinimg.com/1200x/91/13/5a/91135af53c5c5c257d8dddc0ff356a4b.jpg"
+                alt="Rainy Days">
+
+            <!-- Paragraph with id used by JavaScript -->
+            <p id="message">
+                Some rainy evenings feel like a memory.
+                The city grows quieter, raindrops blur the lights,
+                and time seems to slow down.
+            </p>
+
+            <!-- Button calls JavaScript function -->
+            <button onclick="showInfo()">
+                Read More
+            </button>
+
+        </div>
+
+        <script>
+
+            // Function runs when button is clicked
+            function showInfo(){
+
+                // Display alert box
+                alert("Rainy Days - A peaceful moment in the rain");
+
+                // Select paragraph by id and change text
+                document.getElementById("message").innerText =
+                "Rain has a unique way of bringing calmness to the heart. The sound of falling drops, the cool breeze, and the glow of distant lights create an atmosphere of nostalgia and peace.";
+            }
+
+        </script>
+
+    </body>
+</html>
