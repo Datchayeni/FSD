@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>StoryVerse - Registrational Portal</title>
+
+        <style>
+            body{
+                background-color: #f4f6f9;
+                margin: 20px;
+                font-family: Arial, sans-serif;
+            }
+            .container{
+                width: 80%;
+                margin: auto;
+                background: white;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0px 0px 10px gray;
+            }
+            .tagline {
+                text-align: center;
+                font-size: 18px;
+                color: #555;
+            }
+
+            .banner {
+                background-color: white;
+                padding: 15px;
+                border-radius: 8px;
+                margin: 20px 0;
+            }
+
+            h2 {
+                color: #4B0082;
+            }
+
+            form {
+                background-color: white;
+                padding: 20px;
+                width: 350px;
+                border-radius: 8px;
+                margin: 20px auto;
+            }
+
+            label{
+                font-weight: bold;
+            }
+
+            input, select {
+                width: 100%;
+                padding: 10px;
+                margin-top: 5px;
+                margin-bottom: 15px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+            }
+
+            button {
+                background-color: #4B0082;
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                cursor: pointer;
+            }
+
+            button:hover {
+                background-color: #6A0DAD;
+            }
+
+            #message {
+                margin-top: 15px;
+                font-weight: bold;
+            }
+
+            footer {
+                text-align: center;
+                margin-top: 30px;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 style="color:#4B0082; font-size:42px; text-align:center;">
+            📖 StoryVerse
+        </h1>
+        <div class="container">
+
+            <p class="tagline">
+                Discover captivating romances, fantasies, mysteries, adventures,
+                and science-fiction stories from talented writers around the world.
+            </p>
+
+            <div class="banner">
+                <h2>Featured Stories</h2>
+                <p>Join thousands of readers exploring our top-rated stories.</p>
+            </div>
+
+            <center><h2>Reader Registration Portal</h2></center>
+
+            <form>
+                <label>Full Name</label>
+                <input type="text" id="name" placeholder="Enter your full name">
+
+                <label>Email Address</label>
+                <input type="email" id="email" placeholder="Enter your email">
+
+                <label>Favorite Genre</label>
+                <select id="genre">
+                    <option value="">Select Genre</option>
+                    <option>Romance</option>
+                    <option>Fantasy</option>
+                    <option>Mystery</option>
+                    <option>Science Fiction</option>
+                    <option>Adventure</option>
+                </select>
+
+                <label>Create Password</label>
+                <input type="password" id="password" placeholder="Create a password">
+
+                <button type="button" id="registerBtn">
+                    Join StoryVerse
+                </button>
+
+                <p id="message"></p>
+            </form>
+        </div>
+
+        <footer>
+            © 2026 StoryVerse | Read. Imagine. Explore.
+        </footer>
+
+        <script>
+            document.getElementById("registerBtn")
+                    .addEventListener("click", validateForm);
+
+            function validateForm() {
+
+                let name = document.getElementById("name").value;
+                let email = document.getElementById("email").value;
+                let genre = document.getElementById("genre").value;
+                let password = document.getElementById("password").value;
+
+                let message = document.getElementById("message");
+
+                if(name.trim() === "") {
+                    message.innerHTML = "Please enter your full name.";
+                    message.style.color = "red";
+                    return;
+                }
+
+                if(email.trim() === "") {
+                    message.innerHTML = "Please enter your email address.";
+                    message.style.color = "red";
+                    return;
+                }
+
+                if(genre === "") {
+                    message.innerHTML = "Please select your favorite genre.";
+                    message.style.color = "red";
+                    return;
+                }
+
+                if(password.length < 6) {
+                    message.innerHTML = "Password must contain at least 6 characters.";
+                    message.style.color = "red";
+                    return;
+                }
+
+                message.innerHTML =
+                "Welcome to StoryVerse, " + name +
+                "! Registration Successful.";
+
+                message.style.color = "green";
+            }
+        </script>
+    </body>
+</html>
